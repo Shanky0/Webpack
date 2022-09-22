@@ -18,15 +18,12 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.?js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader",
-                    options: {
-                        presets: ['@babel/preset-env', '@babel/preset-react']
-                    }
-                }
-            },
+                use: ['babel-loader'],
+                test: /\.(js|jsx)$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'babel-loader',
+                options: { presets: ['@babel/env','@babel/preset-react'] },
+              },
             {
                 test: /\.css$/, use: ['style-loader', 'css-loader']
             },
@@ -41,11 +38,6 @@ module.exports = {
                         loader: 'file-loader',
                     },
                 ],
-            },
-            {
-                test: /\.js?/,
-                include: path.resolve(__dirname, 'src'),
-                loader: 'babel-loader'
             }
         ]
     },

@@ -1,12 +1,13 @@
 import React from "react";
-import LandingPage from "./Components/LandingPage";
+import Hangman from "./Components/Hangman";
+
+
 
 
 const App = () => {
     return (
         <>
-        <h1> Hello world</h1>
-           <LandingPage />
+          <Hangman /> 
         </>
     )
 }
