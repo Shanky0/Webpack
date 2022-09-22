@@ -33,8 +33,8 @@ const Hangman = () => {
 
   // Keypad generate function
   const generateKeypad = () => {
-    return "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("").map((letter) => (
-      <button key={letter} value={letter} onClick={handleGuess} disabled={state.guessed.has(letter)} >
+    return "abcdefghijklmnopqrstuvwxyz-".toUpperCase().split("").map((letter) => (
+      <button key={letter} value={letter === '-' ? ' ' : letter} onClick={handleGuess} disabled={state.guessed.has(letter)} >
         {letter}
       </button>
     ));
@@ -66,7 +66,7 @@ const Hangman = () => {
         </>}
         {restart && (
           <button id="reset" onClick={() => reset()}>
-            Restart?
+            Restart 
           </button>
         )}
       </div>
