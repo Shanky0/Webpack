@@ -28,7 +28,6 @@ const Hangman = () => {
 
   const handleGuess = (e) => {
     let letter = e.target.value;
-    console.log(letter);
     setState({ ...state, wrong: state.wrong + (state.answer.word.toUpperCase().includes(letter) ? 0 : 1), guessed: state.guessed.add(letter) });
   }
 
@@ -53,7 +52,7 @@ const Hangman = () => {
   return (
     <div>
       <div className="Hangman">
-        <h2>Hangman</h2>
+        <h2>Hang - A - Man</h2>
         <img src={images[state.wrong]} alt="HangMan" />
         {(isWinner || gameOver) ? <h1> {gameState}</h1> : <>
           <p>
