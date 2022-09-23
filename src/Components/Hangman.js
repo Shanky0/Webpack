@@ -33,8 +33,8 @@ const Hangman = () => {
 
   // Keypad generate function
   const generateKeypad = () => {
-    return "abcdefghijklmnopqrstuvwxyz-".toUpperCase().split("").map((letter) => (
-      <button key={letter} value={letter === '-' ? ' ' : letter} onClick={handleGuess} disabled={state.guessed.has(letter)} >
+    return "abcdefghijklmnopqrstuvwxyz_".toUpperCase().split("").map((letter) => (
+      <button key={letter} value={letter === '_' ? ' ' : letter} onClick={handleGuess} disabled={state.guessed.has(letter)} >
         {letter}
       </button>
     ));
